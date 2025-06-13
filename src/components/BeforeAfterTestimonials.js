@@ -33,7 +33,7 @@ const BeforeAfterTestimonials = () => {
 
   return (
     <section className="before-after-section">
-      <div className="container">
+      <div className="before-after-container">
         <h2 className="section-title">Resultados Reais</h2>
         <p className="section-subtitle">Veja a transformação de quem já usou</p>
         

@@ -63,7 +63,7 @@ const PricingSection = () => {
 
   return (
     <section className="pricing-section" id="planos">
-      <div className="container">
+      <div className="pricing-container">
         <div className="section-header">
           <h2>Planos e Preços</h2>
           <p>Escolha o pacote ideal para suas necessidades profissionais</p>

@@ -1,42 +1,51 @@
 /* Estilos gerais da seção */
 .before-after-section {
-  padding: 80px 0;
+  padding: 6rem 0;
   background-color: #fff;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
-.container {
-  max-width: 1200px;
+.before-after-container {
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 .section-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
-  color: #333;
+  color: #2d2a6e;
   text-align: center;
-  margin-bottom: 15px;
-  font-weight: 700;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .section-subtitle {
   color: #666;
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  max-width: 700px;
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Grid de antes/depois */
 .before-after-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Card individual */
@@ -48,6 +57,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  border: 1px solid #eee;
 }
 
 .before-after-card:hover {
@@ -152,21 +163,39 @@
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+  .before-after-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .before-after-container {
+    padding: 0 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .before-after-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    gap: 1.5rem;
   }
   
   .section-title {
     font-size: 2rem;
+    padding: 0 1rem;
   }
   
   .section-subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
+    font-size: 1.1rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .before-after-card {
+    margin: 0 0.5rem;
   }
 }
 

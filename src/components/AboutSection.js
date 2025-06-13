@@ -28,7 +28,7 @@ const AboutSection = () => {
 
   return (
     <section className="about-section">
-      <div className="container">
+      <div className="about-container">
         <div className="about-content">
           <div className="about-text">
             <h2 className="section-title">Sobre a Retrato.AI</h2>

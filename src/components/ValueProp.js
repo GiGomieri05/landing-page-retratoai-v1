@@ -1,4 +1,5 @@
 import React from 'react';
+import { Camera, Brain, Clock, UserCheck } from 'lucide-react';
 import './ValueProp.css';
 
 const ValueProp = () => {
@@ -8,7 +9,7 @@ const ValueProp = () => {
         <div className="value-prop-content">
           <div className="section-header">
             <h2 className="section-title">
-              A Retrato.AI não vende fotos.
+              A Retrato.AI não vende apenas fotos. <br></br>
               <span className="highlight">Entrega posicionamento estratégico</span> com aparência de ensaio profissional.
             </h2>
             <div className="section-divider"></div>
@@ -17,7 +18,7 @@ const ValueProp = () => {
           <div className="benefits-grid">
             <div className="benefit-card">
               <div className="benefit-icon">
-                <span>📸</span>
+                <Camera size={28} strokeWidth={1.5} />
               </div>
               <div className="benefit-content">
                 <h3 className="benefit-title">Alta qualidade</h3>
@@ -27,7 +28,7 @@ const ValueProp = () => {
             
             <div className="benefit-card">
               <div className="benefit-icon">
-                <span>🧠</span>
+                <Brain size={28} strokeWidth={1.5} />
               </div>
               <div className="benefit-content">
                 <h3 className="benefit-title">Curadoria estratégica</h3>
@@ -37,7 +38,7 @@ const ValueProp = () => {
             
             <div className="benefit-card">
               <div className="benefit-icon">
-                <span>⏱</span>
+                <Clock size={28} strokeWidth={1.5} />
               </div>
               <div className="benefit-content">
                 <h3 className="benefit-title">Entrega rápida</h3>
@@ -47,7 +48,7 @@ const ValueProp = () => {
             
             <div className="benefit-card">
               <div className="benefit-icon">
-                <span>💼</span>
+                <UserCheck size={28} strokeWidth={1.5} />
               </div>
               <div className="benefit-content">
                 <h3 className="benefit-title">Ideal para quem vende confiança</h3>

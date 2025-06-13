@@ -6,28 +6,31 @@
 }
 
 .carousel-container {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 6vw;
+  padding: 0 2rem;
   position: relative;
   z-index: 2;
 }
 
 .carousel-slide {
-  padding: 0 6px;
+  padding: 0;
   outline: none;
-  display: flex;
+  display: flex !important; /* Sobrescreve estilos inline do Slick */
   align-items: center;
   justify-content: center;
   background: none;
   box-sizing: border-box;
+  margin: 0 5px;
+  width: auto !important; /* Remove largura fixa */
+  min-width: 0; /* Permite que o slide encolha */
 }
 
 .image-wrapper {
   position: relative;
   border-radius: 18px;
   overflow: hidden;
-  width: 250px;
+  width: 100%;
   height: 250px;
   background: #fff;
   box-shadow: 0 4px 18px 0 rgba(60, 60, 90, 0.11);
@@ -35,6 +38,7 @@
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.25s, transform 0.22s;
+  margin: 0;
 }
 
 @media (max-width: 1200px) {
@@ -85,13 +89,27 @@
 
 /* Slick overrides */
 .slick-slider {
-  margin: 0 -10px;
+  margin: 0 -5px;
 }
 
 .slick-list {
   overflow: visible;
   padding: 30px 0 50px !important;
-  margin: 0 -10px;
+  margin: 0 -5px;
+}
+
+/* Garante que os slides tenham a largura correta */
+.slick-slide {
+  float: none !important;
+  display: inline-block !important;
+  vertical-align: top;
+  height: 100%;
+}
+
+/* Remove margens extras */
+.slick-track {
+  display: flex !important;
+  align-items: center;
 }
 
 .slick-slide {

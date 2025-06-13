@@ -1,0 +1,306 @@
+/* Estilos gerais da seção */
+.pricing-section {
+  padding: 100px 0;
+  background-color: #f8f9ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho da seção */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  color: #2d2d69;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.section-header p {
+  color: #6b6b84;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de preços */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Cards de preço */
+.pricing-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaff;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(93, 79, 255, 0.1);
+  border-color: #d6d4ff;
+}
+
+/* Card popular */
+.pricing-card.popular {
+  border: 2px solid #5d4fff;
+  transform: translateY(-10px);
+}
+
+.pricing-card.popular:hover {
+  transform: translateY(-15px);
+}
+
+/* Badges */
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #5d4fff;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 5px 15px rgba(93, 79, 255, 0.3);
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Cabeçalho do card */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0ff;
+}
+
+.pricing-header h3 {
+  font-size: 1.5rem;
+  color: #2d2d69;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #5d4fff;
+  margin: 10px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.price-note {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4caf50;
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+  width: max-content;
+  margin: 5px auto 0;
+}
+
+/* Lista de recursos */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  flex-grow: 1;
+}
+
+.features-list li {
+  padding: 10px 0;
+  color: #4a4a68;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.feature-icon {
+  color: #5d4fff;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Rodapé do card */
+.pricing-footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.btn.primary {
+  background: #5d4fff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #4a3fcc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(93, 79, 255, 0.3);
+}
+
+.btn.outline {
+  background: transparent;
+  border-color: #5d4fff;
+  color: #5d4fff;
+}
+
+.btn.outline:hover {
+  background: rgba(93, 79, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn.whatsapp {
+  background: #25D366;
+  color: white;
+  margin-top: 15px;
+}
+
+.btn.whatsapp:hover {
+  background: #1fbb5a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #f0f0f0;
+  color: #999;
+  border-color: #e0e0e0;
+}
+
+/* CTA do WhatsApp */
+.whatsapp-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.whatsapp-cta p {
+  color: #6b6b84;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { 
+  animation-delay: 0.3s;
+  z-index: 1;
+}
+.pricing-card:nth-child(3) { animation-delay: 0.5s; }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 70px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 40px;
+  }
+  
+  .pricing-card {
+    padding: 30px 20px;
+  }
+  
+  .price {
+    font-size: 2.2rem;
+  }
+}

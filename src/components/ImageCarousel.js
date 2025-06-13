@@ -69,10 +69,15 @@ const ImageCarousel = () => {
     autoplaySpeed: 1, // 1ms para scroll contínuo sem bug
     pauseOnHover: false,
     centerMode: false, // desativa centralização para suavizar loop
-    centerPadding: '0px',
+    centerPadding: '0',
     cssEase: 'linear', // linear para efeito contínuo
     arrows: false, // sem setas
     swipe: true, // swipe ativado para evitar travamentos
+    variableWidth: false, // desativa largura variável para melhor controle
+    adaptiveHeight: false, // desativa altura adaptativa para melhor performance
+    rows: 1, // garante apenas uma linha de slides
+    slidesPerRow: 1, // um slide por linha
+    edgeFriction: 0.35, // suaviza a transição entre o último e o primeiro slide
     responsive: [
       {
         breakpoint: 1200,

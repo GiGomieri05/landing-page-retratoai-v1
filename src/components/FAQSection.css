@@ -1,0 +1,227 @@
+/* Estilos gerais da seção */
+.faq-section {
+  padding: 100px 0;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho da seção */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  color: #2d2d69;
+  margin-bottom: 15px;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #5d4fff, #9e8fff);
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: #6b6b84;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de perguntas */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+/* Cards de pergunta */
+.faq-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-card:hover {
+  box-shadow: 0 8px 25px rgba(93, 79, 255, 0.1);
+  border-color: #e0e0ff;
+}
+
+.faq-card.active {
+  border-color: #5d4fff;
+  box-shadow: 0 10px 30px rgba(93, 79, 255, 0.15);
+}
+
+.faq-question {
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-card.active .faq-question {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0ff;
+}
+
+.faq-question h3 {
+  font-size: 1.1rem;
+  color: #2d2d69;
+  margin: 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.faq-card.active .faq-question h3 {
+  color: #5d4fff;
+}
+
+.faq-icon {
+  color: #5d4fff;
+  font-size: 1.2rem;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.faq-card.active .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0 30px 25px;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #4a4a68;
+  line-height: 1.7;
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+/* CTA */
+.faq-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f9f9ff 0%, #f0f2ff 100%);
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0ff;
+}
+
+.faq-cta p {
+  color: #4a4a68;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-whatsapp:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.faq-card:nth-child(1) { animation-delay: 0.1s; }
+.faq-card:nth-child(2) { animation-delay: 0.2s; }
+.faq-card:nth-child(3) { animation-delay: 0.3s; }
+.faq-card:nth-child(4) { animation-delay: 0.4s; }
+.faq-card:nth-child(5) { animation-delay: 0.5s; }
+.faq-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 70px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .faq-question {
+    padding: 20px;
+  }
+  
+  .faq-card.active .faq-answer {
+    padding: 0 20px 20px;
+  }
+  
+  .faq-cta {
+    padding: 30px 20px;
+  }
+  
+  .btn-whatsapp {
+    width: 100%;
+    padding: 15px;
+  }
+}

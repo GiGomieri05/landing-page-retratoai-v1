@@ -1,7 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Hero.css';
 
 const Hero = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    
+    const images = React.useMemo(() => [
+        '/images/hero/hero-section-1.webp',
+        '/images/hero/hero-section-2.webp',
+        '/images/hero/hero-section-3.webp',
+        '/images/hero/hero-section-4.webp',
+        '/images/hero/hero-section-5.webp',
+        '/images/hero/hero-section-6.webp',
+        '/images/hero/hero-section-7.webp',
+        '/images/hero/hero-section-8.webp',
+    ], []);
+
+    // Change image every 7 seconds
+    useEffect(() => {
+        const changeImage = () => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setIsTransitioning(false);
+            }, 300);
+        };
+        const interval = setInterval(changeImage, 7000);
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+    // Image transition effect
+    useEffect(() => {
+        const changeImage = () => {
+            setIsTransitioning(true);
+            
+            setTimeout(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setIsTransitioning(false);
+            }, 300);
+        };
+
+        const interval = setInterval(changeImage, 7000);
+        return () => clearInterval(interval);
+    }, [images.length]);
+    
+    // Preload next image
+    useEffect(() => {
+        if (images.length > 1) {
+            const nextIndex = (currentImageIndex + 1) % images.length;
+            const img = new Image();
+            img.src = images[nextIndex];
+        }
+    }, [currentImageIndex, images]);
+
     return (
         <section className="hero">
             <div className="hero-container">
@@ -17,28 +68,17 @@ const Hero = () => {
                     </a>
                 </div>
                 <div className="hero-image">
-                    <div className="before-after-grid">
-                        <div className="image-container">
+                    <div className="hero-image-container">
+                        <div className={`hero-main-image-container ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                             <img 
-                                src="https://picsum.photos/seed/before/800/1000" 
-                                alt="Antes - Selfie comum" 
-                                className="before-image" 
-                                loading="lazy"
-                                width="400"
-                                height="500"
+                                src={images[currentImageIndex]} 
+                                alt="Exemplo de retrato profissional" 
+                                className="hero-main-image" 
+                                loading="eager"
+                                width={600}
+                                height={750}
+                                onLoad={() => setIsTransitioning(false)}
                             />
-                            <div className="overlay" aria-hidden="true">IA</div>
-                        </div>
-                        <div className="image-container">
-                            <img 
-                                src="https://picsum.photos/seed/after/800/1000" 
-                                alt="Depois - Retrato profissional" 
-                                className="after-image" 
-                                loading="lazy"
-                                width="400"
-                                height="500"
-                            />
-                            <div className="overlay" aria-hidden="true">FOTO</div>
                         </div>
                     </div>
                 </div>

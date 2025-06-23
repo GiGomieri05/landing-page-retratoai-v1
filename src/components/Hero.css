@@ -86,10 +86,175 @@
 }
 
 /* Hero content container */
+/* Hero section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
 .hero-container {
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 600px; /* Fixed height */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.hero-main-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hero-main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform, opacity;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+}
+
+.floating {
+  animation: float 10s ease-in-out infinite;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Fade transitions */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-image-container:hover {
+  transform: perspective(3000px) rotateY(2deg) translateY(0px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image-container:hover .hero-main-image {
+  transform: scale(1.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-container {
+    gap: 3rem;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .hero-image-container {
+    transform: none !important;
+    max-width: 100%;
+  }
+  
+  .hero-image-container:hover {
+    transform: translateY(0px) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2.5rem 0;
+  }
+  
+  .hero-container {
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem;
+  }
+}
+
+/* Decorative elements */
 .hero::before,
 .hero::after {
   content: '';
@@ -97,14 +262,19 @@
   border-radius: 50%;
   z-index: 0;
   opacity: 0.1;
-  filter: blur(60px);
+  filter: blur(70px);
   animation: float 15s infinite ease-in-out;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .hero::before {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   background: var(--primary);
+  top: -150px;
+  right: -150px;
+  animation-duration: 20s;
   top: -100px;
   right: -100px;
   animation-delay: 0s;
@@ -233,7 +403,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transform: perspective(1000px) rotateY(-3deg) rotateX(3deg);
+  transform: perspective(100px) rotateY(-5deg) rotateX(0deg);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 1000px;
   margin: 0 auto;
@@ -241,7 +411,8 @@
 }
 
 .hero-image:hover .before-after-grid {
-  transform: rotateY(0) rotateX(0);
+  transform: rotateY(-5deg) rotateX(0deg);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-container {
@@ -268,7 +439,7 @@
 }
 
 .image-container:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .overlay {

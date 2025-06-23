@@ -59,7 +59,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="cta-container">
-          <a href="#contact" className="cta-button secondary">
+          <a href="https://form.jotform.com/251413836021043" className="cta-button secondary">
             Quero enviar minhas fotos
           </a>
         </div>

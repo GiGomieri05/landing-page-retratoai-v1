@@ -1,5 +1,5 @@
 /* Estilos gerais da seção */
-.pricing-section {
+.contact-section {
   padding: 6rem 0;
   background-color: #f8f9ff;
   position: relative;
@@ -7,8 +7,8 @@
   width: 100%;
 }
 
-.pricing-container {
-  max-width: 1280px;
+.contact-container {
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
@@ -17,159 +17,195 @@
 /* Cabeçalho da seção */
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
 .section-header h2 {
   font-size: 2.8rem;
   color: #2d2d69;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 .section-header p {
   color: #6b6b84;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Grid de preços */
-.pricing-grid {
+/* Layout do conteúdo de contato */
+.contact-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-/* Cards de preço */
-.pricing-card {
+/* Informações de contato */
+.contact-info {
   background: white;
   border-radius: 16px;
-  padding: 40px 30px;
-  position: relative;
+  padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid #eaeaff;
-  display: flex;
-  flex-direction: column;
 }
 
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(93, 79, 255, 0.1);
-  border-color: #d6d4ff;
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: #2d2d69;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-/* Card popular */
-.pricing-card.popular {
-  border: 2px solid #5d4fff;
-  transform: translateY(-10px);
-}
-
-.pricing-card.popular:hover {
-  transform: translateY(-15px);
-}
-
-/* Badges */
-.popular-badge {
+.contact-info h3::after {
+  content: '';
   position: absolute;
-  top: -15px;
-  right: 20px;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #5d4fff;
+  border-radius: 2px;
+}
+
+/* Passos do processo */
+.steps {
+  margin-bottom: 2.5rem;
+}
+
+.step {
+  display: flex;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 35px;
+  bottom: -20px;
+  width: 2px;
+  background: #eaeaff;
+  z-index: 1;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
   background: #5d4fff;
   color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 5px 15px rgba(93, 79, 255, 0.3);
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
-.coming-soon-badge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff6b6b;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+.step-content h4 {
+  font-size: 1.2rem;
+  color: #2d2d69;
+  margin: 0 0 0.3rem;
   font-weight: 600;
 }
 
-/* Cabeçalho do card */
-.pricing-header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #f0f0ff;
+.step-content p {
+  color: #6b6b84;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.pricing-header h3 {
+/* Contato direto */
+.direct-contact {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.direct-contact p {
+  margin: 0 0 1rem;
+  color: #4a4a68;
+  font-weight: 500;
+}
+
+/* Formulário de contato */
+.contact-form {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
   font-size: 1.5rem;
   color: #2d2d69;
-  margin-bottom: 10px;
+  margin: 0 0 1.8rem;
   font-weight: 700;
 }
 
-.price {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #5d4fff;
-  margin: 10px 0;
+.form-group {
+  margin-bottom: 1.5rem;
   position: relative;
-  display: inline-block;
 }
 
-.price-note {
+.input-icon {
   position: absolute;
-  bottom: -20px;
-  left: 0;
-  right: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4caf50;
-  background: #e8f5e9;
-  padding: 2px 8px;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a8aa5;
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  border: 1px solid #e0e0ff;
   border-radius: 10px;
-  display: inline-block;
-  width: max-content;
-  margin: 5px auto 0;
-}
-
-/* Lista de recursos */
-.features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 30px;
-  flex-grow: 1;
-}
-
-.features-list li {
-  padding: 10px 0;
+  font-size: 1rem;
   color: #4a4a68;
-  display: flex;
-  align-items: center;
-  line-height: 1.5;
-  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #fbfbff;
 }
 
-.feature-icon {
-  color: #5d4fff;
-  margin-right: 10px;
-  font-size: 0.8rem;
-  flex-shrink: 0;
+.contact-form textarea {
+  min-height: 120px;
+  padding: 1rem;
+  resize: vertical;
 }
 
-/* Rodapé do card */
-.pricing-footer {
-  margin-top: auto;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #5d4fff;
+  box-shadow: 0 0 0 3px rgba(93, 79, 255, 0.1);
+  background-color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a8a8c0;
+}
+
+.privacy-notice {
+  font-size: 0.85rem;
+  color: #8a8aa5;
   text-align: center;
+  margin: 1.5rem 0 0;
+  line-height: 1.5;
 }
 
 /* Botões */
@@ -178,67 +214,148 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 50px;
+  padding: 15px 24px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: none;
   width: 100%;
 }
 
-.btn.primary {
+.btn-primary {
   background: #5d4fff;
   color: white;
+  font-size: 1.05rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
 }
 
-.btn.primary:hover {
+.btn-primary:hover {
   background: #4a3fcc;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(93, 79, 255, 0.3);
 }
 
-.btn.outline {
-  background: transparent;
-  border-color: #5d4fff;
-  color: #5d4fff;
-}
-
-.btn.outline:hover {
-  background: rgba(93, 79, 255, 0.05);
-  transform: translateY(-2px);
-}
-
-.btn.whatsapp {
-  background: #25D366;
+.btn-whatsapp {
+  background: #25d366;
   color: white;
-  margin-top: 15px;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-.btn.whatsapp:hover {
-  background: #1fbb5a;
+.btn-whatsapp:hover {
+  background: #128c7e;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
-.btn.disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  background: #f0f0f0;
-  color: #999;
-  border-color: #e0e0e0;
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .contact-content {
+    gap: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+  
+  .contact-content {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-info,
+  .contact-form {
+    padding: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .contact-container {
+    padding: 0 1.5rem;
+  }
+  
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .step-content h4 {
+    font-size: 1.1rem;
+  }
+  
+  .step-content p {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  
+  .contact-form h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* CTA do WhatsApp */
 .whatsapp-cta {
   text-align: center;
-  margin-top: 50px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
 }
 
 .whatsapp-cta p {
   color: #6b6b84;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
 }
 
@@ -254,104 +371,18 @@
   }
 }
 
-.pricing-card {
+.contact-form {
   animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
 }
 
-.pricing-card:nth-child(1) { animation-delay: 0.1s; }
-.pricing-card:nth-child(2) { 
-  animation-delay: 0.3s;
-  z-index: 1;
-}
-.pricing-card:nth-child(3) { animation-delay: 0.5s; }
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .pricing-grid {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .pricing-card.popular {
-    transform: none;
-  }
-  
-  .pricing-card.popular:hover {
-    transform: translateY(-5px);
-  }
+.contact-info {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
 }
 
-@media (max-width: 1280px) {
-  .pricing-container {
-    padding: 0 2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  
-  .pricing-card {
-    padding: 2rem 1.5rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2.4rem;
-  }
-  
-  .section-header p {
-    font-size: 1.05rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .pricing-section {
-    padding: 5rem 0;
-  }
-  
-  .pricing-container {
-    padding: 0 1.5rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
-  .section-header p {
-    font-size: 1rem;
-  }
-  
-  .pricing-card {
-    padding: 1.75rem 1.25rem;
-  }
-  
-  .pricing-header h3 {
-    font-size: 1.5rem;
-  }
-  
-  .price {
-    font-size: 2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2.2rem;
-  }
-  
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto 40px;
-  }
-  
-  .pricing-card {
-    padding: 30px 20px;
-  }
-  
-  .price {
-    font-size: 2.2rem;
+/* Media query para telas grandes */
+@media (min-width: 1280px) {
+  .contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

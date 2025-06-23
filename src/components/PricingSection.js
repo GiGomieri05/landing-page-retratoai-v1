@@ -1,134 +1,144 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PricingSection.css';
-import { FaCheck, FaCrown, FaWhatsapp, FaShoppingCart } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaUser, FaBriefcase, FaArrowRight } from 'react-icons/fa';
 
-const PricingSection = () => {
-  const plans = [
-    {
-      id: 1,
-      name: 'Básico',
-      price: 'R$ 300',
-      popular: false,
-      features: [
-        '3 imagens profissionais',
-        'Curadoria especializada',
-        'Entrega em até 3 dias úteis',
-        '1 rodada de ajustes',
-        'Suporte por e-mail'
-      ],
-      buttonText: 'Comprar Agora',
-      buttonVariant: 'outline'
-    },
-    {
-      id: 2,
-      name: 'Profissional',
-      price: 'R$ 480',
-      popular: true,
-      features: [
-        '6 imagens profissionais',
-        'Curadoria especializada',
-        'Ajustes finos personalizados',
-        'Entrega em até 5 dias úteis',
-        '2 rodadas de ajustes',
-        'Suporte prioritário',
-        'Guia de posicionamento'
-      ],
-      buttonText: 'Quero me destacar',
-      buttonVariant: 'primary',
-      priceNote: 'Economize R$ 120'
-    },
-    {
-      id: 3,
-      name: 'Assinatura Visual',
-      price: 'R$ 199/mês',
-      popular: false,
-      comingSoon: true,
-      features: [
-        '4 novas imagens por mês',
-        'Atualização de look trimestral',
-        'Curadoria premium',
-        'Ajustes ilimitados',
-        'Suporte VIP',
-        'Prioridade na fila'
-      ],
-      buttonText: 'Lista de espera',
-      buttonVariant: 'outline',
-      priceNote: 'Lançamento em breve!'
-    }
-  ];
+const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    business: '',
+    message: ''
+  });
 
-  const handleWhatsApp = () => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aqui você pode adicionar a lógica para enviar o formulário
+    const message = `Olá! Me chamo ${formData.name}, trabalho com ${formData.business}. ${formData.message}`;
+    const whatsappUrl = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleWhatsAppClick = () => {
     window.open('https://wa.me/SEUNUMERO', '_blank');
   };
 
   return (
-    <section className="pricing-section" id="planos">
-      <div className="pricing-container">
+    <section className="contact-section" id="contato">
+      <div className="contact-container">
         <div className="section-header">
-          <h2>Planos e Preços</h2>
-          <p>Escolha o pacote ideal para suas necessidades profissionais</p>
+          <h2>Vamos conversar sobre o seu projeto</h2>
+          <p>Conte-nos sobre suas necessidades e vamos criar imagens incríveis juntos</p>
         </div>
         
-        <div className="pricing-grid">
-          {plans.map((plan) => (
-            <div 
-              key={plan.id} 
-              className={`pricing-card ${plan.popular ? 'popular' : ''} ${plan.comingSoon ? 'coming-soon' : ''}`}
-            >
-              {plan.popular && (
-                <div className="popular-badge">
-                  <FaCrown /> Mais Escolhido
-                </div>
-              )}
-              
-              {plan.comingSoon && (
-                <div className="coming-soon-badge">Em Breve</div>
-              )}
-              
-              <div className="pricing-header">
-                <h3>{plan.name}</h3>
-                <div className="price">
-                  {plan.price}
-                  {plan.priceNote && <span className="price-note">{plan.priceNote}</span>}
+        <div className="contact-content">
+          <div className="contact-info">
+            <h3>Como funciona?</h3>
+            <div className="steps">
+              <div className="step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <h4>Conversa Inicial</h4>
+                  <p>Entendemos suas necessidades e objetivos</p>
                 </div>
               </div>
-              
-              <ul className="features-list">
-                {plan.features.map((feature, index) => (
-                  <li key={index}>
-                    <FaCheck className="feature-icon" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="pricing-footer">
-                <button 
-                  className={`btn ${plan.buttonVariant} ${plan.comingSoon ? 'disabled' : ''}`}
-                  disabled={plan.comingSoon}
-                >
-                  {plan.comingSoon ? (
-                    <span>{plan.buttonText}</span>
-                  ) : (
-                    <>
-                      <FaShoppingCart /> {plan.buttonText}
-                    </>
-                  )}
-                </button>
+              <div className="step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <h4>Orientação Personalizada</h4>
+                  <p>Te ajudamos com dicas de iluminação e enquadramento</p>
+                </div>
+              </div>
+              <div className="step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <h4>Criação das Imagens</h4>
+                  <p>Transformamos suas fotos com IA de forma profissional</p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-        
-        <div className="whatsapp-cta">
-          <p>Não encontrou o que procura?</p>
-          <button className="btn whatsapp" onClick={handleWhatsApp}>
-            <FaWhatsapp /> Conversar no WhatsApp
-          </button>
+            
+            <div className="direct-contact">
+              <p>Prefere falar diretamente?</p>
+              <button className="btn btn-whatsapp" onClick={handleWhatsAppClick}>
+                <FaWhatsapp /> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+          
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <h3>Me conte mais sobre você</h3>
+            
+            <div className="form-group">
+              <div className="input-icon">
+                <FaUser />
+              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Seu nome completo"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <div className="input-icon">
+                <FaEnvelope />
+              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu melhor e-mail"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <div className="input-icon">
+                <FaBriefcase />
+              </div>
+              <input
+                type="text"
+                name="business"
+                placeholder="Sua área de atuação"
+                value={formData.business}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder="Conte-nos sobre o que você precisa e como podemos ajudar"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                required
+              />
+            </div>
+            
+            <button type="submit" className="btn btn-primary">
+              Enviar mensagem <FaArrowRight className="btn-icon" />
+            </button>
+            
+            <p className="privacy-notice">Seus dados estão seguros conosco. Não compartilhamos suas informações.</p>
+          </form>
         </div>
       </div>
     </section>
   );
 };
 
-export default PricingSection;
+export default ContactSection;

@@ -12,7 +12,7 @@ const Hero = () => {
                     <p className="hero-subtitle">
                         Eleve sua autoridade com uma imagem feita para vender sua expertise — sem perder tempo, sem parecer artificial.
                     </p>
-                    <a href="#contact" className="cta-button" aria-label="Comece agora e obtenha seu retrato profissional">
+                    <a href="https://form.jotform.com/251413836021043" className="cta-button" aria-label="Comece agora e obtenha seu retrato profissional">
                         Quero meu retrato agora
                     </a>
                 </div>

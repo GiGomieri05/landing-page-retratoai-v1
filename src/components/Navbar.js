@@ -87,7 +87,7 @@ const Navbar = () => {
             FAQ
           </Link>
           <a 
-            href="#contato" 
+            href="https://form.jotform.com/251413836021043" 
             className="nav-button"
             onClick={closeMobileMenu}
           >

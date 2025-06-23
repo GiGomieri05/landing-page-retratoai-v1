@@ -8,6 +8,7 @@
   transition: all 0.3s ease-in-out;
   padding: 1.5rem 0;
   background: transparent;
+  font-family: 'Questrial', sans-serif
 }
 
 .navbar.scrolled {
@@ -93,6 +94,7 @@
 .nav-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(93, 79, 255, 0.4);
+  background: white
 }
 
 /* Menu móvel */

@@ -5,20 +5,20 @@ import 'slick-carousel/slick/slick-theme.css';
 import './ImageCarousel.css';
 
 const ImageCarousel = () => {
-  // Sample images from Picsum - you can replace these with your actual images later
+  // Local images from the carroussel directory
   const images = [
-    { id: 1, url: 'https://picsum.photos/seed/portrait1/800/600' },
-    { id: 2, url: 'https://picsum.photos/seed/portrait2/800/600' },
-    { id: 3, url: 'https://picsum.photos/seed/portrait3/800/600' },
-    { id: 4, url: 'https://picsum.photos/seed/portrait4/800/600' },
-    { id: 5, url: 'https://picsum.photos/seed/portrait5/800/600' },
-    { id: 6, url: 'https://picsum.photos/seed/portrait6/800/600' },
-    { id: 7, url: 'https://picsum.photos/seed/portrait7/800/600' },
-    { id: 8, url: 'https://picsum.photos/seed/portrait8/800/600' },
-    { id: 9, url: 'https://picsum.photos/seed/portrait9/800/600' },
-    { id: 10, url: 'https://picsum.photos/seed/portrait10/800/600' },
-    { id: 11, url: 'https://picsum.photos/seed/portrait11/800/600' },
-    { id: 12, url: 'https://picsum.photos/seed/portrait12/800/600' },
+    { id: 1, url: '/images/carroussel/freepik__a-portrait-of-a-28-year-old-middle-eastern-man-wit__37305.webp' },
+    { id: 2, url: '/images/carroussel/freepik__gugahighresolution-studio-portrait-of-a-23yearold-__37296.webp' },
+    { id: 3, url: '/images/carroussel/freepik__gugahighresolution-studio-portrait-of-a-25yearold-__37297.webp' },
+    { id: 4, url: '/images/carroussel/freepik__highresolution-professional-studio-portrait-of-a-m__37300.webp' },
+    { id: 5, url: '/images/carroussel/freepik__highresolution-studio-portrait-of-a-stunning-brazi__37299.webp' },
+    { id: 6, url: '/images/carroussel/freepik__professional-corporate-portrait-of-a-smiling-man-i__37306.webp' },
+    { id: 7, url: '/images/carroussel/freepik__professional-portrait-of-a-confident-young-busines__37307.webp' },
+    { id: 8, url: '/images/carroussel/freepik__studio-portrait-of-a-confident-woman-sitting-on-a-__37298.webp' },
+    { id: 9, url: '/images/carroussel/freepik__the-style-is-candid-image-photography-with-natural__37301.webp' },
+    { id: 10, url: '/images/carroussel/freepik__the-style-is-candid-image-photography-with-natural__37304.webp' },
+    { id: 11, url: '/images/carroussel/freepik__warm-indoor-portrait-of-a-confident-woman-seated-i__37302.webp' },
+    { id: 12, url: '/images/carroussel/freepik__warm-indoor-portrait-of-a-confident-woman-seated-i__37303.webp' },
   ];
 
   const getSlidesToShow = () => {

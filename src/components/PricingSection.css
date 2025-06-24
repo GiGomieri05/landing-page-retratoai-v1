@@ -83,16 +83,7 @@
   position: relative;
 }
 
-.step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 35px;
-  bottom: -20px;
-  width: 2px;
-  background: #eaeaff;
-  z-index: 1;
-}
+/* Linha vertical removida */
 
 .step-number {
   width: 32px;

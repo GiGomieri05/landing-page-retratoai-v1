@@ -12,8 +12,8 @@
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #5d4fff, #c55fff);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   padding: 0.8rem 0;
   backdrop-filter: blur(10px);
 }
@@ -78,8 +78,8 @@
 
 /* Botão de contato */
 .nav-button {
-  background: linear-gradient(90deg, #5d4fff, #c55fff);
-  color: white;
+  background: white;
+  color: #c55fff;
   border: none;
   border-radius: 30px;
   padding: 0.6rem 1.5rem;
@@ -142,7 +142,7 @@
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background: #0a0a0a;
+    background: linear-gradient(135deg, #5d4fff, #c55fff);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;

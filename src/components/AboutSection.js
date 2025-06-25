@@ -58,12 +58,12 @@ const AboutSection = () => {
           <div className="about-image">
             <div className="image-frame">
               <img 
-                src="https://picsum.photos/seed/800/600" 
-                alt="Exemplo de retrato profissional" 
+                src="/images/hero/hero-section-8.webp"
+                alt="Exemplo de retrato profissional"
                 className="main-image"
               />
               <div className="highlight-box">
-                <span className="highlight-number">+500</span>
+                <span className="highlight-number"><b>+20</b></span>
                 <span className="highlight-text">clientes satisfeitos</span>
               </div>
             </div>

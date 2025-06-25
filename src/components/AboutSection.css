@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  font-family: 'Questrial', sans-serif;
 }
 
 .about-container {
@@ -159,6 +160,7 @@
 }
 
 .highlight-box {
+  font-family: 'Montserrat', sans-serif;
   position: absolute;
   bottom: 30px;
   right: -20px;
@@ -179,10 +181,11 @@
 }
 
 .highlight-number {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1;
   margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .highlight-text {

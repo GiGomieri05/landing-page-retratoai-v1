@@ -28,7 +28,7 @@ function App() {
             <ValueProp />
           </Element>
           
-          <Element name="depoimentos">
+          <Element name="">
             <ImageCarousel />
           </Element>
           
@@ -36,7 +36,10 @@ function App() {
             <HowItWorks />
           </Element>
           
-          <BeforeAfterTestimonials />
+          <Element name="depoimentos">
+          <BeforeAfterTestimonials /> 
+          </Element>
+          
           
           <Element name="sobre">
             <AboutSection />

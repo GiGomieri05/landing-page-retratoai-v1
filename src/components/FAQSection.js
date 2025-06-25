@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './FAQSection.css';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const faqs = [
     {
@@ -20,15 +22,15 @@ const FAQSection = () => {
     },
     {
       question: "É seguro enviar minhas fotos?",
-      answer: "Totalmente seguro. Suas imagens são usadas exclusivamente para a geração dos retratos e são descartadas logo após a entrega. Respeitamos sua privacidade e seguimos rigorosos protocolos de segurança de dados."
+      answer: "Totalmente seguro. Suas imagens são usadas exclusivamente para calibrar a IA e a geração dos retratos. Respeitamos sua privacidade e garantimos a segurança dos seus dados."
     },
     {
       question: "Quanto tempo leva para receber minhas fotos?",
-      answer: "O processo leva em média 3 dias úteis após o envio das suas fotos. Para o pacote profissional, o prazo é de até 5 dias úteis devido aos ajustes personalizados."
+      answer: "O processo leva em média de 3 a 5 dias úteis após o envio das suas fotos, de acordo com o pacote contratado."
     },
     {
       question: "Posso pedir ajustes nas fotos geradas?",
-      answer: "Sim! Oferecemos rodadas de ajustes conforme o pacote contratado. No Básico, você tem direito a 1 rodada, e no Profissional, 2 rodadas de ajustes finos."
+      answer: "Sim! Te mostramos um resultado inicial para que você possa avaliar. Depois disso, oferecemos algumas rodadas de ajustes conforme o pacote contratado."
     }
   ];
 
@@ -36,12 +38,41 @@ const FAQSection = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  // Intersection Observer para animação de entrada
+  useEffect(() => {
+    const currentRef = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section className="faq-section">
+    <section 
+      className={`faq-section ${isVisible ? 'visible' : ''}`} 
+      id="duvidas"
+      ref={sectionRef}
+      aria-label="Perguntas Frequentes"
+    >
       <div className="container">
-        <div className="section-header">
-          <h2>Dúvidas Frequentes</h2>
-          <p>Tire suas principais dúvidas sobre a Retrato.AI</p>
+        <div className="section-header" data-aos="fade-up">
+          <h2>Perguntas Frequentes</h2>
+          <p>Encontre respostas para as principais dúvidas sobre a Retrato.AI</p>
         </div>
         
         <div className="faq-grid">
@@ -50,25 +81,30 @@ const FAQSection = () => {
               key={index} 
               className={`faq-card ${activeIndex === index ? 'active' : ''}`}
               onClick={() => toggleFAQ(index)}
+              role="button"
+              tabIndex="0"
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleFAQ(index)}
+              aria-expanded={activeIndex === index}
+              aria-controls={`faq-${index}`}
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
             >
               <div className="faq-question">
                 <h3>{faq.question}</h3>
-                <span className="faq-icon">
+                <span className="faq-icon" aria-hidden="true">
                   {activeIndex === index ? <FiChevronUp /> : <FiChevronDown />}
                 </span>
               </div>
-              <div className="faq-answer">
+              <div 
+                id={`faq-${index}`}
+                className="faq-answer"
+                role="region"
+                aria-hidden={activeIndex !== index}
+              >
                 <p>{faq.answer}</p>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="faq-cta">
-          <p>Ainda tem dúvidas? Estamos aqui para ajudar!</p>
-          <a href="https://wa.me/SEUNUMERO" className="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-            Fale conosco pelo WhatsApp
-          </a>
         </div>
       </div>
     </section>

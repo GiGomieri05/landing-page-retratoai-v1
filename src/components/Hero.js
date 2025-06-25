@@ -16,33 +16,35 @@ const Hero = () => {
         '/images/hero/hero-section-8.webp',
     ], []);
 
-    // Change image every 7 seconds
+    // Change image with smooth transition
     useEffect(() => {
         const changeImage = () => {
-            setIsTransitioning(true);
-            setTimeout(() => {
-                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-                setIsTransitioning(false);
-            }, 300);
-        };
-        const interval = setInterval(changeImage, 7000);
-        return () => clearInterval(interval);
-    }, [images.length]);
-
-    // Image transition effect
-    useEffect(() => {
-        const changeImage = () => {
+            // Start fade out
             setIsTransitioning(true);
             
-            setTimeout(() => {
+            // After fade out, change image and fade in
+            const timer = setTimeout(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-                setIsTransitioning(false);
-            }, 300);
+                
+                // Wait for the new image to load before starting fade in
+                const img = new Image();
+                const nextIndex = (currentImageIndex + 1) % images.length;
+                img.src = images[nextIndex];
+                
+                img.onload = () => {
+                    // Small delay to ensure smooth transition
+                    setTimeout(() => {
+                        setIsTransitioning(false);
+                    }, 50);
+                };
+            }, 800); // Match this with the CSS animation duration (0.8s)
+            
+            return () => clearTimeout(timer);
         };
 
-        const interval = setInterval(changeImage, 7000);
+        const interval = setInterval(changeImage, 8000); // Increased interval for better UX
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [currentImageIndex, images]);
     
     // Preload next image
     useEffect(() => {

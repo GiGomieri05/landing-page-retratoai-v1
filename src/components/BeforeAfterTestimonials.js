@@ -1,66 +1,66 @@
 import React from 'react';
 import './BeforeAfterTestimonials.css';
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const BeforeAfterTestimonials = () => {
-  // Dados de exemplo para antes/depois
-  const beforeAfterItems = [
+  // Dados dos depoimentos
+  const testimonials = [
     {
       id: 1,
-      before: 'https://picsum.photos/seed/before1/600/600',
-      after: 'https://picsum.photos/seed/after1/600/600',
-      name: 'Ana S.',
-      role: 'Executiva de Vendas',
-      testimonial: 'Nunca me senti tão profissional.'
+      image: '/images/carroussel/freepik__gugahighresolution-studio-portrait-of-a-23yearold-__37296.webp',
+      text: 'Estou no início da minha carreira e queria uma imagem que transmitisse confiança, simpatia e profissionalismo. Mas eu não tinha tempo — nem orçamento — para fazer um ensaio fotográfico. Quando descobri a criação de imagens por IA, fiquei impressionado com a qualidade e rapidez. A imagem ficou exatamente como eu imaginava. Já estou usando no meu LinkedIn, currículo e apresentações.',
+      name: 'Gustavo',
+      age: 23,
+      profession: 'Veterinário',
+      imagePosition: 'left'
     },
     {
       id: 2,
-      before: 'https://picsum.photos/seed/before2/600/600',
-      after: 'https://picsum.photos/seed/after2/600/600',
-      name: 'Carlos M.',
-      role: 'Empreendedor',
-      testimonial: 'Ajudou até na minha autoconfiança!'
+      image: '/images/freepik__highresolution-editorial-portrait-of-a-confident-2__27976.webp',
+      text: 'Mesmo já tendo feito ensaios profissionais e investido em imagens para meu consultório, fiquei surpresa com o resultado da imagem gerada por IA. A praticidade, o custo-benefício e a qualidade visual me chamaram atenção. Em poucos minutos, tive uma foto linda, com a estética e o estilo que combinam com meu trabalho como psicóloga. Hoje, uso tanto nas redes sociais quanto em materiais de divulgação — e recomendo para colegas que querem uma solução rápida e eficiente.',
+      name: 'Julia',
+      age: 25,
+      profession: 'Psicóloga',
+      imagePosition: 'right'
     },
     {
       id: 3,
-      before: 'https://picsum.photos/seed/before3/600/600',
-      after: 'https://picsum.photos/seed/after3/600/600',
-      name: 'Juliana F.',
-      role: 'Gerente de Marketing',
-      testimonial: 'Usei no LinkedIn e gerei mais chamadas em uma semana.'
-    },
+      image: '/images/freepik__highresolution-professional-studio-portrait-of-a-m__27983.webp',
+      text: 'Este ano completo 30 anos de profissão. Sei da importância de transmitir confiança e profissionalismo em cada detalhe — inclusive na imagem que apresento. Mas com a rotina corrida do consultório, manter minhas fotos atualizadas é inviável. Quando conheci a criação de imagens por IA, fiquei surpresa com a praticidade e qualidade. A imagem ficou exatamente como eu queria: séria, acolhedora e profissional. Já estou usando no meu Instagram, WhatsApp e materiais de apresentação.',
+      name: 'Ana Cristina',
+      age: 53,
+      profession: 'Ortodontista',
+      imagePosition: 'left'
+    }
   ];
 
   return (
-    <section className="before-after-section">
-      <div className="before-after-container">
-        <h2 className="section-title">Resultados Reais</h2>
-        <p className="section-subtitle">Veja a transformação de quem já usou</p>
+    <section className="testimonials-section" id="depoimentos">
+      <div className="container">
+        <h2 className="section-title">O que nossos clientes dizem</h2>
+        <p className="section-subtitle">Veja como o RetratoAI está transformando a forma como as pessoas criam suas fotos profissionais</p>
         
-        <div className="before-after-grid">
-          {beforeAfterItems.map((item) => (
-            <div key={item.id} className="before-after-card">
-              <div className="before-after-images">
-                <div className="image-container">
-                  <img src={item.before} alt="Antes" className="before-image" />
-                  <span className="image-label">Antes</span>
+        <div className="testimonials-list">
+          {testimonials.map((testimonial) => (
+            <div 
+              key={testimonial.id} 
+              className={`testimonial-row ${testimonial.imagePosition}`}
+            >
+              <div className="testimonial-content">
+                <div className="testimonial-image-container">
+                  <img 
+                    src={testimonial.image} 
+                    alt={`${testimonial.name} - ${testimonial.profession}`} 
+                    className="testimonial-image"
+                  />
                 </div>
-                <div className="image-container">
-                  <img src={item.after} alt="Depois" className="after-image" />
-                  <span className="image-label">Depois</span>
-                </div>
-              </div>
-              <div className="testimonial">
-                <div className="quote-icon">
-                  <FaQuoteLeft />
-                </div>
-                <p className="testimonial-text">{item.testimonial}</p>
-                <div className="quote-icon right">
-                  <FaQuoteRight />
-                </div>
-                <div className="testimonial-author">
-                  <strong>{item.name}</strong>
-                  <span>{item.role}</span>
+                <div className="testimonial-text-container">
+                  <FaQuoteLeft className="quote-icon" />
+                  <p className="testimonial-text">{testimonial.text}</p>
+                  <div className="testimonial-author">
+                    <div className="author-name">{testimonial.name}</div>
+                    <div className="author-details">{testimonial.age} anos • {testimonial.profession}</div>
+                  </div>
                 </div>
               </div>
             </div>

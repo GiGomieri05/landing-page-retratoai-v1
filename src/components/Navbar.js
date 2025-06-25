@@ -69,15 +69,6 @@ const Navbar = () => {
             Depoimentos
           </Link>
           <Link 
-            to="planos" 
-            smooth={true} 
-            duration={800} 
-            className="nav-link"
-            onClick={closeMobileMenu}
-          >
-            Planos
-          </Link>
-          <Link 
             to="faq" 
             smooth={true} 
             duration={800} 

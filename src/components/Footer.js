@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { FaInstagram, FaLinkedin, FaYoutube, FaTwitter, FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import '../components/Footer.css';
 
 const Footer = () => {
@@ -73,28 +73,19 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+5511999999999" className="footer-link">
-                    +55 (11) 99999-9999
+                  <a href="tel:+5512997023363" className="footer-link">
+                    (12) 99702-3363
                   </a>
-                </li>
-                <li className="footer-address">
-                  São Paulo - SP, Brasil
                 </li>
               </ul>
             </div>
 
             <div className="social-links">
-              <a href="https://instagram.com/retratoai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+              <a href="https://instagram.com/retrato_ai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
               <a href="https://linkedin.com/company/retratoai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                 <FaLinkedin />
-              </a>
-              <a href="https://youtube.com/retratoai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube">
-                <FaYoutube />
-              </a>
-              <a href="https://twitter.com/retratoai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
-                <FaTwitter />
               </a>
             </div>
           </div>

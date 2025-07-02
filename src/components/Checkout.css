@@ -1,0 +1,289 @@
+.checkout-container {
+  min-height: 100vh;
+  padding: 0;
+  background: linear-gradient(135deg, #f9f7ff 0%, #f0ecff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Questrial', sans-serif;
+}
+
+.checkout-highlight {
+  display: inline-block;
+  background: linear-gradient(90deg, #5d4fff, #c55fff);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.13rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 40px;
+  padding: 0.5rem 1.6rem;
+  margin-bottom: 1.3rem;
+  margin-top: 0.7rem;
+  box-shadow: 0 2px 10px rgba(93,79,255,0.09);
+  text-align: center;
+  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.product-badge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #5d4fff, #c55fff);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.35rem 1.2rem;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(93,79,255,0.10);
+  z-index: 2;
+  letter-spacing: 0.01em;
+  font-family: 'Montserrat', sans-serif;
+  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #5d4fff;
+  margin-bottom: 1.2rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  background: linear-gradient(90deg, #5d4fff 40%, #c55fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkout-title {
+  font-size: 2.7rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #5d4fff, #c55fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.checkout-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5d4fff, #c55fff);
+  border-radius: 3px;
+}
+
+.products-list {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(93, 79, 255, 0.10);
+  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  min-width: 250px;
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(93, 79, 255, 0.07);
+  position: relative;
+  height: 100%;
+}
+
+.product-title, .product-photos, .product-price, .product-feature, ul, .product-button {
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+.product-feature {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.products-list {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+.product-title, .product-photos, .product-price, .product-feature, ul {
+  width: 100%;
+  text-align: center;
+}
+
+.product-feature {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  flex: 0 0 auto;
+}
+
+.product-button {
+  margin-top: auto;
+}
+.product-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 16px 48px rgba(197, 95, 255, 0.16);
+}
+.product-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2d2a6e;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.product-photos {
+  font-size: 1.18rem;
+  color: #5d4fff;
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.product-button {
+  margin-top: auto;
+  width: 100%;
+  padding: 1rem 0;
+  background: linear-gradient(90deg,rgb(42, 214, 65),rgb(27, 209, 103));
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.16rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(93,79,255,0.13);
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+.product-button:hover {
+  background: linear-gradient(90deg,rgb(42, 214, 65),rgb(27, 209, 103));
+  transform: translateY(-2px) scale(1.04);
+}
+
+.product-feature {
+  font-size: 1rem;
+  color: #6b6b84;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+}
+
+
+
+@media (max-width: 1024px) {
+  .products-list {
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+  .product-card {
+    min-width: 210px;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .checkout-title {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .products-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+  .product-card {
+    width: 95%;
+    max-width: 350px;
+    padding: 1.7rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-title {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .product-card {
+    padding: 1.2rem 0.7rem;
+    min-width: 0;
+    border-radius: 14px;
+  }
+  .products-list {
+    gap: 1.1rem;
+  }
+}

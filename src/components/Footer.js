@@ -81,10 +81,10 @@ const Footer = () => {
             </div>
 
             <div className="social-links">
-              <a href="https://instagram.com/retrato_ai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+              <a href="https://instagram.com/retrato_ai" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com/company/retratoai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/retratoai" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
             </div>

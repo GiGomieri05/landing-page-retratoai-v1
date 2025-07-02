@@ -51,13 +51,14 @@
 /* Linha do depoimento */
 .testimonial-row {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(93, 79, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(93, 79, 255, 0.1);
+  min-height: 400px;
 }
 
 .testimonial-row:hover {
@@ -69,8 +70,7 @@
 .testimonial-content {
   display: flex;
   width: 100%;
-  min-height: 400px;
-  align-items: center;
+  align-items: stretch;
 }
 
 /* Posicionamento da imagem */
@@ -84,23 +84,19 @@
 
 /* Container da imagem */
 .testimonial-image-container {
-  flex: 1;
-  min-height: 100%;
-  overflow: hidden;
+  flex: 0 0 50%;
   position: relative;
-  aspect-ratio: 1/1; /* Mantém a proporção quadrada */
-  max-width: 500px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 .testimonial-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .testimonial-row:hover .testimonial-image {
@@ -109,8 +105,8 @@
 
 /* Container do texto */
 .testimonial-text-container {
-  flex: 1;
-  padding: 2.5rem;
+  flex: 1 1 50%;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,12 +149,6 @@
 }
 
 /* Responsividade */
-@media (max-width: 1280px) {
-  .testimonial-image-container {
-    max-width: 450px;
-  }
-}
-
 @media (max-width: 1100px) {
   .testimonial-content {
     min-height: 350px;
@@ -166,10 +156,6 @@
   
   .testimonial-text {
     font-size: 1rem;
-  }
-  
-  .testimonial-image-container {
-    max-width: 400px;
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Checkout from './components/Checkout';
 import { Element } from 'react-scroll';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -16,46 +17,47 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        
-        <main>
-          <Element name="hero">
-            <Hero />
-          </Element>
-          
-          <Element name="valor">
-            <ValueProp />
-          </Element>
-          
-          <Element name="">
-            <ImageCarousel />
-          </Element>
-          
-          <Element name="como-funciona">
-            <HowItWorks />
-          </Element>
-          
-          <Element name="depoimentos">
-          <BeforeAfterTestimonials /> 
-          </Element>
-          
-          
-          <Element name="sobre">
-            <AboutSection />
-          </Element>
-          
-          <Element name="planos">
-            <PricingSection />
-          </Element>
-          
-          <Element name="faq">
-            <FAQSection />
-          </Element>
-        </main>
-        
-        <Footer />
-      </div>
+      <Routes>
+        <Route
+          path="/checkout"
+          element={<Checkout />}
+        />
+        <Route
+          path="/*"
+          element={
+            <div className="App">
+              <Navbar />
+              <main>
+                <Element name="hero">
+                  <Hero />
+                </Element>
+                <Element name="valor">
+                  <ValueProp />
+                </Element>
+                <Element name="">
+                  <ImageCarousel />
+                </Element>
+                <Element name="como-funciona">
+                  <HowItWorks />
+                </Element>
+                <Element name="depoimentos">
+                  <BeforeAfterTestimonials />
+                </Element>
+                <Element name="sobre">
+                  <AboutSection />
+                </Element>
+                <Element name="planos">
+                  <PricingSection />
+                </Element>
+                <Element name="faq">
+                  <FAQSection />
+                </Element>
+              </main>
+              <Footer />
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 }

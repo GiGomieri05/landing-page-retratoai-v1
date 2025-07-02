@@ -42,7 +42,7 @@ const Hero = () => {
             return () => clearTimeout(timer);
         };
 
-        const interval = setInterval(changeImage, 8000); // Increased interval for better UX
+        const interval = setInterval(changeImage, 3000); // Increased interval for better UX
         return () => clearInterval(interval);
     }, [currentImageIndex, images]);
     

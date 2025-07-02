@@ -8,7 +8,7 @@ const ValueProp = () => {
       <div className="value-prop-content">
         <div className="section-header">
           <h2 className="section-title">
-            A Retrato.AI não vende apenas fotos. <br></br>
+            A Retrato.AI não vende apenas fotos.
             <span className="highlight">Entrega posicionamento estratégico</span> com aparência de ensaio profissional.
           </h2>
         </div>

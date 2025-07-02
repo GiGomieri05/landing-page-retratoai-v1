@@ -22,10 +22,9 @@ const ImageCarousel = () => {
   ];
 
   const getSlidesToShow = () => {
-    if (window.innerWidth < 480) return 1;
-    if (window.innerWidth < 768) return 2;
-    if (window.innerWidth < 992) return 3;
-    if (window.innerWidth < 1200) return 4;
+    if (window.innerWidth < 480) return 3;
+    if (window.innerWidth < 768) return 4;
+    if (window.innerWidth < 1200) return 5;
     return 5;
   };
 
@@ -82,28 +81,28 @@ const ImageCarousel = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 6,
           centerPadding: '0px',
         }
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 6,
           centerPadding: '0px',
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 6,
           centerPadding: '0px',
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2.8,
           centerPadding: '0px',
         }
       }

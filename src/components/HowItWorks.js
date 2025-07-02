@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Target, CheckCircle, ArrowRight } from 'lucide-react';
+import { User, CreditCard, Image as ImageIcon, MessageSquare, Sparkles, ArrowRight } from 'lucide-react';
 import './HowItWorks.css';
 
 const HowItWorks = () => {
@@ -11,7 +11,7 @@ const HowItWorks = () => {
             Como <span className="highlight">Funciona</span>
           </h2>
           <p className="section-subtitle">
-            Transforme suas fotos em retratos profissionais em apenas 3 passos simples
+            Veja como é simples transformar suas fotos em retratos profissionais:
           </p>
         </div>
 
@@ -19,37 +19,55 @@ const HowItWorks = () => {
           <div className="step">
             <div className="step-number">1</div>
             <div className="step-icon">
-              <Upload size={28} strokeWidth={1.8} />
+              <User size={28} strokeWidth={1.8} />
+            </div>
+            <h3 className="step-title">Preencha seus dados</h3>
+            <p className="step-description">
+              Informe nome, e-mail e informações básicas
+            </p>
+          </div>
+          <div className="step-arrow"><ArrowRight size={32} /></div>
+
+          <div className="step">
+            <div className="step-number">2</div>
+            <div className="step-icon">
+              <CreditCard size={28} strokeWidth={1.8} />
+            </div>
+            <h3 className="step-title">Escolha seu plano</h3>
+            <p className="step-description">
+              Selecione o pacote ideal para você
+            </p>
+          </div>
+          <div className="step-arrow"><ArrowRight size={32} /></div>
+
+          <div className="step">
+            <div className="step-number">3</div>
+            <div className="step-icon">
+              <ImageIcon size={28} strokeWidth={1.8} />
             </div>
             <h3 className="step-title">Envie suas fotos</h3>
             <p className="step-description">
               Ou seu @ do Instagram para análise
             </p>
           </div>
-
-          <div className="step-arrow">
-            <ArrowRight size={32} />
-          </div>
+          <div className="step-arrow"><ArrowRight size={32} /></div>
 
           <div className="step">
-            <div className="step-number">2</div>
+            <div className="step-number">4</div>
             <div className="step-icon">
-              <Target size={28} strokeWidth={1.8} />
+              <MessageSquare size={28} strokeWidth={1.8} />
             </div>
             <h3 className="step-title">Conte seu objetivo</h3>
             <p className="step-description">
               Como você quer se posicionar profissionalmente
             </p>
           </div>
-
-          <div className="step-arrow">
-            <ArrowRight size={32} />
-          </div>
+          <div className="step-arrow"><ArrowRight size={32} /></div>
 
           <div className="step">
-            <div className="step-number">3</div>
+            <div className="step-number">5</div>
             <div className="step-icon">
-              <CheckCircle size={28} strokeWidth={1.8} />
+              <Sparkles size={28} strokeWidth={1.8} />
             </div>
             <h3 className="step-title">Receba seus retratos</h3>
             <p className="step-description">

@@ -12,16 +12,15 @@
 }
 
 .navbar.scrolled {
-  background: linear-gradient(135deg, #5d4fff, #c55fff);
+  background: linear-gradient(135deg, #5d4ffff8, #c55fff88);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   padding: 0.8rem 0;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(30px);
 }
 
 .navbar-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +28,7 @@
 
 /* Estilo do logo */
 .logo-container .logo {
+  margin-top: 10px;
   height: 40px;
   width: auto;
   transition: all 0.3s ease;
@@ -108,6 +108,10 @@
 
 /* Responsividade */
 @media (max-width: 1024px) {
+
+  .navbar-container {
+    margin-inline: 2rem;
+  }
   .nav-links {
     gap: 1.5rem;
   }
@@ -119,6 +123,12 @@
   .nav-button {
     padding: 0.5rem 1.2rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .navbar-container {
+    margin-inline: 2rem;
   }
 }
 

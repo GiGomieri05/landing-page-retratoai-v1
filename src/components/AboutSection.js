@@ -5,24 +5,24 @@ import { FaUserTie, FaPalette, FaClock, FaCheckCircle } from 'react-icons/fa';
 const AboutSection = () => {
   const features = [
     {
-      icon: <FaUserTie className="feature-icon" />,
-      title: "Fundador Especializado",
-      description: "Experiência sólida em branding e imagem profissional para criar retratos que transmitam autoridade."
-    },
-    {
-      icon: <FaPalette className="feature-icon" />,
-      title: "Curadoria Humana",
-      description: "Entendemos as necessidades específicas de cada profissão - cada nicho merece uma abordagem única."
-    },
-    {
       icon: <FaClock className="feature-icon" />,
       title: "Rápido e Prático",
       description: "Fotos com estética de estúdio profissional, entregues em poucos dias, sem complicações."
     },
     {
       icon: <FaCheckCircle className="feature-icon" />,
-      title: "Sem Burocracia",
-      description: "Chega de agendamentos e sessões demoradas. Resultados profissionais sem sair de casa."
+      title: "Pacotes Acessíveis",
+      description: "Planos para todos os bolsos, com resultados de alto padrão sem gastar muito."
+    },
+    {
+      icon: <FaPalette className="feature-icon" />,
+      title: "Curadoria Humana",
+      description: "Entendemos as necessidades específicas de cada profissão — cada nicho merece uma abordagem única."
+    },
+    {
+      icon: <FaUserTie className="feature-icon" />,
+      title: "Time Especializado",
+      description: "Equipe com experiência em branding e imagem profissional, pronta para te destacar no mercado."
     }
   ];
 
@@ -31,7 +31,7 @@ const AboutSection = () => {
       <div className="about-container">
         <div className="about-content">
           <div className="about-text">
-            <h2 className="section-title">Sobre a Retrato.AI</h2>
+            <h2 className="section-title">Sobre nós</h2>
             <p className="tagline">
               Transformando imagens em oportunidades
             </p>

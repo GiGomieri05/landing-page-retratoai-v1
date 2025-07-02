@@ -13,7 +13,7 @@ const ContactSection = () => {
         <a
           href="https://form.jotform.com/251413836021043"
           className="cta-btn"
-          target="_blank"
+
           rel="noopener noreferrer"
         >
           Solicitar Agora <FaArrowRight className="cta-btn-icon" />
